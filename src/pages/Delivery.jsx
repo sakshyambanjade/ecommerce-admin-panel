@@ -1,7 +1,7 @@
 import React from 'react'
 import { X } from 'lucide-react'
 import SideBar from '../components/shared/Sidebar'
-
+import { Skeleton } from '../components/Skeleton'
 const products = [
   {
     id: 1,
@@ -146,12 +146,16 @@ export function Delivery() {
                 <div className="py-6">
                   <h2 className="text-base font-bold text-gray-500">Payment Method</h2>
                 </div>
+                
               </div>
+              
             </div>
           </div>
         </div>
       </div>
+      
     </div>
+    <Skeleton/>  
     </div>
   )
 }
