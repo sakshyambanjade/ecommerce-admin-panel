@@ -1,6 +1,6 @@
 import React from 'react'
 import { ArrowUpRight } from 'lucide-react'
-
+import {Skeleton} from '../components/Skeleton'
 export function Return() {
   return (
 
@@ -226,6 +226,8 @@ export function Return() {
       </div>
     </div>
   </div>
+  <Skeleton/>
+
 </section>
   )
 }
