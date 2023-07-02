@@ -1,4 +1,6 @@
 import React from 'react'
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 export function Products() {
   return (
     <div>
@@ -6,7 +8,9 @@ export function Products() {
       
       {Array.from({ length: 14 }).map((_, i) => (
         <div key={i} className="rounded-md border">
+           <LazyLoadImage />
           <img
+         
             src="https://images.unsplash.com/photo-1588099768523-f4e6a5679d88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHwxMTM4MTU1NXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
             alt="Laptop"
             className="aspect-[16/9] w-full rounded-md md:aspect-auto md:h-[300px] lg:h-[200px]"
