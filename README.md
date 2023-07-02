@@ -1,9 +1,10 @@
 # ecommerce-admin-panel
 
-Framework-Used: Tailwind Css 
+Framework-Used: Tailwind Css
 
-Components of the project
+-----------
 
+Components of the project:
 
 -react-router-dom (Router, Routes, Route)
 
