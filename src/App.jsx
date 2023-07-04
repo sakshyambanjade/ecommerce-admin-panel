@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/shared/Layout'
-import Register from './pages/Register'
+import {Register} from './Auth/Register'
+import {Login} from './Auth/Login'
+
 import Dashboard from './pages/Dashboard'
 import {Delivery} from './pages/Delivery'
 import {Products} from './pages/Products'
@@ -16,6 +18,7 @@ function App() {
                     <Route  path="Return" element={<Return />} />
                 </Route>
                 <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
 
             </Routes>
         </Router>
