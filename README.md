@@ -13,3 +13,7 @@ Components of the project:
 -react-lazy-load-image-component
 
 -prettier
+
+
+
+---------
