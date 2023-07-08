@@ -9,6 +9,9 @@ import {Delivery} from './pages/Delivery'
 import {Products} from './pages/Products'
 import {Return} from '../src/pages/Return'
 import { Transaction } from '../src/pages/Transaction'
+
+import Error  from './pages/Error'
+
 function App() {
     return (
         <Router>
@@ -21,8 +24,11 @@ function App() {
                     <Route  path="Transaction" element={<Transaction />} />
 
                 </Route>
+                <Route path="*" element={<Error/>} />
+
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+
 
             </Routes>
         </Router>
