@@ -5,7 +5,7 @@ export default function Error() {
     <div>
       <div className="flex flex-col h-screen bg-white">
   <img
-    src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
+    src="https://img.freepik.com/free-photo/modern-blue-sports-shoe-design-close-up-fashionable-generated-by-ai_188544-19682.jpg?w=1380&t=st=1688826851~exp=1688827451~hmac=a64ae823b8d9d78a66798e91ce8fe8755c6618c62aadc77bfb87d0cd8ebc0b3e"
     alt=""
     className="object-cover w-full h-64"
   />
