@@ -12,10 +12,13 @@ import { Transaction } from '../src/pages/Transaction'
 
 import Error  from './pages/Error'
 
+// import Alert from './Alert/Alert'
+
 function App() {
     return (
         <Router>
             <Routes>
+        {/* <Alert> */}
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Dashboard />} />
                     <Route path="products" element={<Products />} />
@@ -28,8 +31,7 @@ function App() {
 
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
-
-
+                {/* </Alert> */}
             </Routes>
         </Router>
     )
