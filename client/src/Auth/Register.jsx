@@ -69,15 +69,16 @@ function Register() {
 
                 <form action="#" className="mt-8 grid grid-cols-6 gap-6">
                   <div className="col-span-6 sm:col-span-3">
-                    <label htmlFor="FirstName" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label htmlFor="FirstName"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                       First Name
                     </label>
 
                     <input
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                      name = "fname"
                       type = "text"
-                      name = "Name"
-                      value = {user.fname }   
+                      value = {user.fname}   
                       onChange={handelChange}    
                     />
                   </div>
@@ -89,22 +90,21 @@ function Register() {
 
                     <input
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                      name = "lname"
                       type = "text"
-                      name = "Name"
                       value = {user.lname}   
                       onChange={handelChange}
                     />
                   </div>
 
                   <div className="col-span-6">
-                    <label htmlFor="Email" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label htmlFor="" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                       Email
                     </label>
 
                     <input
                     type = "text"
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-                      type = "email"
                       name = "email"
                       value = {user.email}   
                       onChange={handelChange}
@@ -112,14 +112,14 @@ function Register() {
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
-                    <label htmlFor="Password" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <label htmlFor="" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                       Password
                     </label>
 
                     <input
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
                       type="password"
-                      name = "pasword"
+                      name = "password"
                       value = {user.password}   
                       onChange={handelChange}
                     />
