@@ -4,31 +4,31 @@ import axios from 'axios';
 function Register() {
   const [user, setUser] = useState({
     fname: '',
-    lname:'',
+    lname: '',
     email: '',
     password: '',
     reEnterPassword: ''
   });
 
-  const { name, email, password } = user;
+  const { fname, lname, email, password, reEnterPassword } = user;
 
   const register = () => {
-    axios.post('http://localhost:5000/api/register', { name, email, password })
-      .then(response => {
-        // Handle the response here
-      })
-      .catch(error => {
-        // Handle the error here
-      });
+    if (fname && lname && email && password && password === reEnterPassword) {
+      axios.post('http://localhost:9002/register', user)
+        .then(res => console.log(res))
+        .catch(error => console.error(error));
+    } else {
+      alert('Invalid data. Please fill in all fields and ensure the passwords match.');
+    }
   };
 
-  const handelChange = e => {
-    const {name , value} = e.target
+  const handleChange = e => {
+    const { name, value } = e.target;
     setUser({
       ...user,
-      [name]:value
-    })
-  }
+      [name]: value
+    });
+  };
 
 
   return (
@@ -79,7 +79,7 @@ function Register() {
                       name = "fname"
                       type = "text"
                       value = {user.fname}   
-                      onChange={handelChange}    
+                      onChange={handleChange}    
                     />
                   </div>
 
@@ -93,7 +93,7 @@ function Register() {
                       name = "lname"
                       type = "text"
                       value = {user.lname}   
-                      onChange={handelChange}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -103,11 +103,11 @@ function Register() {
                     </label>
 
                     <input
-                    type = "text"
+                      type = "email"
                       className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
                       name = "email"
                       value = {user.email}   
-                      onChange={handelChange}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -121,7 +121,7 @@ function Register() {
                       type="password"
                       name = "password"
                       value = {user.password}   
-                      onChange={handelChange}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -135,7 +135,7 @@ function Register() {
                       type="password"
                       name = "reEnterPassword"
                       value = {user.reEnterPassword}   
-                      onChange={handelChange}
+                      onChange={handleChange}
                     
                     />
                   </div>
