@@ -11,14 +11,26 @@ mongoose.connect("mongodb://127.0.0.1:27017/loginRegisterDB", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
+
+const userSchema = new mongoose.Schema({
+    name: String,
+    email:String,
+    password:String
+})
+
+const User = new mongoose.model("User",userSchema)
 const connection = mongoose.connection;
 connection.once("open", () => {
     console.log("Connected to MongoDB database");
 });
 
 // Routes
-app.get("/", (req, res) => {
-    res.send("MY API");
+app.post("/login", (req, res) => {
+    res.send("MY API login");
+});
+
+app.post("/register", (req, res) => {
+    res.send("MY API register");
 });
 
 app.listen(9002, () => {

@@ -1,9 +1,27 @@
-import React, { Component } from 'react'
+import React ,  { useState }from 'react'
+import axios from 'axios';
 
-export  class Login extends Component {
-  render() {
-    return (
-<div>
+export  function Login() {
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  });
+
+  const { name, email, password } = user;
+
+ 
+  const handelChange = e => {
+    const {name , value} = e.target
+    setUser({
+      ...user,
+      [name]:value
+    })
+  }
+  return (
+    <div>
+      <div>
+      {console.log("user",user)}
+
 <section className="bg-white dark:bg-gray-900">
   <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
     <aside
@@ -52,30 +70,36 @@ export  class Login extends Component {
             <label
               htmlFor="Email"
               className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+             
             >
               Email/Username
             </label>
 
             <input
               type="email"
-              id="Email"
-              name="email"
+              name = "email"
+              value = {user.email}   
+              onChange={handelChange}
               className="mt-5 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 h-10"
             />
           </div>
 
           <div className="col-span-6 ">
             <label
-              htmlFor="Password"
+              htmlFor="password"
               className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+              name = "assword"
+              value = {user.password}   
+              onChange={handelChange}
             >
               Password
             </label>
 
             <input
               type="password"
-              id="Password"
               name="password"
+              value = {user.password}   
+              onChange={handelChange}
               className="mt-5 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 h-10"
             />
           </div>
@@ -100,6 +124,6 @@ export  class Login extends Component {
   </div>
 </section>
       </div>
-    )
-  }
+    </div>
+  )
 }
