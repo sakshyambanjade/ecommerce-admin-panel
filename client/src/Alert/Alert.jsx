@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { Prompt } from 'react-router';
+import { Prompt } from 'react-router-dom'; // Import Prompt from react-router-dom, not react-router
 
-const LeavingPrompt = () => {
+const Promptt = () => {
   useEffect(() => {
     const handleBeforeUnload = (event) => {
       event.preventDefault();
-      event.returnValue = ''; // Display an empty string to bypass browser default dialog
+      event.returnValue = ''; 
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
@@ -23,4 +23,4 @@ const LeavingPrompt = () => {
   );
 };
 
-export default LeavingPrompt;
+export default Promptt;
