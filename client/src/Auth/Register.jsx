@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
+
 
 function Register() {
   const [user, setUser] = useState({
@@ -28,6 +30,12 @@ function Register() {
       ...user,
       [name]: value
     });
+  };
+
+  
+  const navigate = useNavigate(); 
+  const handleClick = () => {
+    navigate('/login');
   };
 
 
@@ -179,9 +187,9 @@ function Register() {
 
                     <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                       Already have an account?
-                      <a href="./login" className="text-gray-700 underline dark:text-gray-200">
-                        Log in
-                      </a>
+                      <button onClick={handleClick} className='text-white '>
+                          Login
+                      </button>
                       .
                     </p>
                   </div>
