@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-export function Login() {
+export function Login({ setLoginUser }) {
   const [user, setUser] = useState({
     email: '',
     password: '',
   });
+
+  const navigate = useNavigate();
 
   const { email, password } = user;
 
@@ -20,15 +23,24 @@ export function Login() {
   const handleLogin = () => {
     axios.post("http://localhost:9002/login", user)
       .then(res => {
-        alert(res.data.message.message); 
+        console.log(res); // Log the entire response object to inspect its structure
+        alert(res.data.message.message);
+        setLoginUser(res.data.user);
+        navigate('/');
       })
       .catch(error => {
-        alert(error.response.data.message.message); 
+        console.log(error); // Log the entire error object to see more details
+        alert(error.response.data.message.message);
       });
+  };
+
+  const handleClick = () => {
+    navigate('/register');
   };
 
   return (
     <div>
+        <div>
       <div>
         {console.log("user", user)}
 
@@ -120,9 +132,9 @@ export function Login() {
 
                     <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                       Need an account?
-                      <a href="./register" className="text-gray-700 underline dark:text-gray-200"
-                      >Signup</a
-                      >.
+                      <button onClick={handleClick}className='dark:text-gray-200 '>
+                        SignUp
+                      </button>
                     </p>
                   </div>
                 </form>
@@ -132,5 +144,8 @@ export function Login() {
         </section>
       </div>
     </div>
+    </div>
   );
 }
+
+export default Login;
