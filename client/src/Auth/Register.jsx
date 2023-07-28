@@ -17,7 +17,7 @@ function Register() {
   const register = () => {
     if (fname && lname && email && password && password === reEnterPassword) {
       axios.post('http://localhost:9002/register', user)
-        .then(res => console.log(res))
+        .then(res => alert(res.data.message))
         .catch(error => console.error(error));
     } else {
       alert('Invalid data. Please fill in all fields and ensure the passwords match.');
